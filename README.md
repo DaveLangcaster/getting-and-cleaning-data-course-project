@@ -27,7 +27,7 @@ Data used in this project was obtained from [Human Activity Recognition Using Sm
 
 ## Tidying the Data <a name="tidying-data"></a>
 
-The R script <code>run_analysis.R</code> can be used to re-create the tidy data set. The script merges training and test data together to create a single data set, the columns containing mean and standard deviation measurements are extracted (79 variables from the original 561). These measurements were then avareaged for each subject and activity type. This final data set was then written to a text file.
+The R script <code>run_analysis.R</code> can be used to re-create the tidy data set. The script merges training and test data together to create a single data set, the columns containing mean and standard deviation measurements are extracted (79 variables from the original 561). These measurements are then avaraged for each subject and activity type. This final data set is then written to a text file.
 
 <code>run_analysis.R</code> carries out the following steps to produce the final, tidy, data set:
 
