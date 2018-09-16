@@ -70,7 +70,7 @@ subject_test <- read.table(subject_test_src)
 # Task 1.1: Assign column names
 
 colnames(x_train) <- features[,2] 
-colnames(y_train) <-"activityId"
+colnames(y_train) <- "activityId"
 colnames(subject_train) <- "subjectId"
 
 colnames(x_test) <- features[,2] 
@@ -101,8 +101,8 @@ merged_data <- merged_data[, mean_std]
 ###########################################################################
 
 act_names <- merge(merged_data, activity_labels,
-                              by='activityId',
-                              all.x=FALSE)
+                   by='activityId',
+                   all.x=FALSE)
 
 ############################################################################
 # Step 4 - Appropriately label the data set with descriptive variable names
@@ -130,10 +130,10 @@ act_cols <- gsub("BodyBody", "Body", act_cols)
 
 colnames(act_names) <- act_cols
 
-##############################################################################
+#########################################################################
 # Step 5 - Create a second, independent tidy set with the average of each
 #          variable for each activity and each subject
-##############################################################################
+#########################################################################
 
 # Task 5.1 Group data by subject and activity and summarise on mean
 

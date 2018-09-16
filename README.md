@@ -29,4 +29,4 @@ The R script <code>run_analysis.R</code> can be used to re-create the tidy data 
 
 The `tidy_data.txt` file in this repository was created by running the `run_analysis.R` script using R version 3.5.1 (2018-07-02) on Windows 7 64-bit edition.
 
-This script requires the <code>data.table</code> (version 1.11.4), <code>dplyr</code> (version 0.7.6) and <code>plyr</code> (version 1.8.4)
+This script requires the <code>data.table</code> (version 1.11.4), <code>dplyr</code> (version 0.7.6) and <code>plyr</code> (version 1.8.4) packages
