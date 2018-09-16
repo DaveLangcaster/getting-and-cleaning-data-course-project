@@ -6,9 +6,9 @@ output: html_document
 keep_md: yes
 ---
 
-# Codebook for the *Getting and Cleaning Data* course project 
+# Codebook for the *Getting and Cleaning Data* course project < name="codebook"></a> 
 
-## Project Description
+## Project Description <name="project-description"></a>
 
 One of the most exciting areas in all of data science right now is wearable computing - see for example [this article](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/). Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users.
 
@@ -18,7 +18,7 @@ The purpose of this project was to demonstrate an ability to collect, work with,
 
 Data used in this project was obtained from [Human Activity Recognition Using Smartphones Data Set](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#). A full description of the study design can be found on the website.
 
-### Collection of the raw data
+### Collection of the raw data <name="data-collection"></a>
 
 Study data was collected in the following way, as described by the researchers:
 
@@ -26,7 +26,7 @@ Study data was collected in the following way, as described by the researchers:
 > 
 > The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
-### Notes on the original (raw) data 
+### Notes on the original (raw) data <name="data-notes"></a>
 
 - Features are normalized and bounded within [-1,1]. 
 - Each feature vector is a row on the 'X' and 'y' files. 
@@ -34,7 +34,7 @@ Study data was collected in the following way, as described by the researchers:
 - The gyroscope units are rad/seg. 
 - A video of the experiment including an example of the 6 recorded activities with one of the participants can be seen in [this video](http://www.youtube.com/watch?v=XOEN9W05_4A) 
 
-## Guide to create the tidy data file
+## Guide to create the tidy data file <name="creating-tidy-data-guide"></a>
 
 The tidy data file was created by following these steps:
 
@@ -73,33 +73,33 @@ The following files are available for the train and test data. Their description
 8. Create a second, independent tidy set with the average of each variable for each activity and each subject.
 9. Write the data set to the <code>tidy_data.txt</code> file.
 
-### Cleaning of the data
+### Cleaning of the data<name="cleaning-data"></a>
 
 The <code>run_analysis.R</code> file performs the following actions to create a tidy data set:
 
-#### Merge training and test sets
+#### Merge training and test sets<name="merging datasets"></a>
 
 The test and training data ("X_train.txt", "X_test.txt"), subject IDs ("subject_train.txt", "subject_test.txt") and activity IDs (y_train.txt, y_test.txt) are merged using <code>rbind()</code> and <code>cbind()</code> to produce a single dataset stored in the variable <code>merged_data</code>. Variables are named using the original variable names assigned by the researchers from the file "features.txt". The <code>colnames()</code> function was used to do this, and also to apply the labels "activityId" and "subjectId" to the activity and subject varaiables respectively.
 
-#### Extract mean and standard deviation variables
+#### Extract mean and standard deviation variables<name="extract-means-stds"></a>
 
 Variables containing mean and standard deviation measurements are extracted using <code>grepl("subject|activity|mean|std", colnames(merged_data))</code> and assigned to a variable <code>mean_std</code>. 
 
-#### Use descriptive activity names
+#### Use descriptive activity names<name="descriptive names"></a>
 
 Activities are labelled via an intermediate variable <code>act_names</code> which is created by applying the <code>merge()</code> function to the <code>merged_data</code> and <code>activity_labels</code> variables. The <code>activity_labels</code> variable was created by reading in the "activity_labels.txt" file from the original data set.
 
-#### Label variables appropriately
+#### Label variables appropriately<name="label-variables"></a>
 
 An intermediate variable <code>act_cols</code> was used to store the labels for the columns, and a series of <code>gsub()</code> operations were carried out to remove the special characters (\, -, "") and to expand abbreviations (i.e. "f" expanded to "frequencyDomain")
 
 [See the Readme.md document that describes the code in greater detail](https://github.com/DaveLangcaster/getting-and-cleaning-data-course-project/blob/master/README.md)
 
-### Create a tidy data set
+### Create a tidy data set<name="create-tidy-data"></a>
 
 A final data set <code>tidy_means</code> is created containing the average of each variable for each subject and activity using <code>ddply()</code> to iterate over the <code>act_names</code> table, grouping by subject and activity, and calculating the mean for each variable.
 
-## Description of the variables in the tidy_data.txt file
+## Description of the variables in the tidy_data.txt file<name="tidy-data-description"></a>
 
 ### Identifiers <a name="identifiers"></a>
 
@@ -109,7 +109,7 @@ Identifier variables in the tidy dat set are:
 * an activity ID (__activityId__): a numeric variable 1:6 
 * an activity label (__activityType__): WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 
-### Sensor variables 
+### Sensor variables <name="sensor-variables"></a>
 
 The sensor variables are contained a 79-feature vector with time and frequency domain signal variables (numeric)
 
@@ -127,7 +127,7 @@ The measurements are classified in two domains:
 
 - Frequency-domain signals (variables prefixed by `frequencyDomain`), resulting from the application of a Fast Fourier Transform (FFT) to some of the time-domain signals.
 
-#### Time-domain signals
+#### Time-domain signals <name="time-domain-signals"></a>
 
 - Average time-domain body acceleration in the X, Y and Z directions:
 
@@ -214,7 +214,7 @@ The measurements are classified in two domains:
 	- `timeDomainBodyGyroscopeJerkMagnitudeMean`
 	- `timeDomainBodyGyroscopeJerkMagnitudeStandardDeviation`
 
-#### Frequency-domain signals
+#### Frequency-domain signals <name="frequency-domain-signals"></a>
 
 - Average frequency-domain body acceleration in the X, Y and Z directions:
 
@@ -294,11 +294,12 @@ The measurements are classified in two domains:
 	- `frequencyDomainBodyGyroscopeJerkMagnitudeStandardDeviation`
 	- `frequencyDomainBodyGyroscopeJerkMagnitudeMeanFrequency`
 
-## Sources
+## Sources <name="sources"></a>
 
 1.  <a name="uci-har"/>Human Activity Recognition Using Smartphones Data Set.
     URL: <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>. Accessed 05/21/2014
 2. <a name="har-smart"/>Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz.
    *Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine*.
    International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+
 
