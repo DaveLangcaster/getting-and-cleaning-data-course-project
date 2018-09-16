@@ -1,3 +1,11 @@
+---
+title: "Readme.md"
+author: "Dave Langcaster"
+date: "15 September 2018"
+output: html_document
+keep_md: yes
+---
+
 # Coursera *Getting and Cleaning Data* course project
 
 This is the repository for the Getting and Cleaning Data Course Project and contains the following files:
