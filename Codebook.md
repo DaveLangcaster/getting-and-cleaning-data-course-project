@@ -66,12 +66,12 @@ The following files are available for the train and test data. Their description
 
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
 
-3. Merge the training and the test sets to create one data set.
-4. Extract only the measurements on the mean and standard deviation for each measurement.
-5. Apply descriptive activity names to the activities in the data set.
-6. Appropriately label the data set with descriptive variable names.
-7. Create a second, independent tidy set with the average of each variable for each activity and each subject.
-8. Write the data set to the <code>tidy_data.txt</code> file.
+4. Merge the training and the test sets to create one data set.
+5. Extract only the measurements on the mean and standard deviation for each measurement.
+6. Apply descriptive activity names to the activities in the data set.
+7. Appropriately label the data set with descriptive variable names.
+8. Create a second, independent tidy set with the average of each variable for each activity and each subject.
+9. Write the data set to the <code>tidy_data.txt</code> file.
 
 ### Cleaning of the data
 
@@ -93,7 +93,7 @@ Activities are labelled via an intermediate variable <code>act_names</code> whic
 
 An intermediate variable <code>act_cols</code> was used to store the labels for the columns, and a series of <code>gsub()</code> operations were carried out to remove the special characters (\, -, "") and to expand abbreviations (i.e. "f" expanded to "frequencyDomain")
 
-[link to the readme document that describes the code in greater detail]()
+[See the Readme.md document that describes the code in greater detail](https://github.com/DaveLangcaster/getting-and-cleaning-data-course-project/blob/master/README.md)
 
 ### Create a tidy data set
 
@@ -292,23 +292,13 @@ The measurements are classified in two domains:
 
 	- `frequencyDomainBodyGyroscopeJerkMagnitudeMean`
 	- `frequencyDomainBodyGyroscopeJerkMagnitudeStandardDeviation`
-	- `frequencyDomainBodyGyroscopeJerkMagnitudeMeanFrequency`Variable 1 (repeat this section for all variables in the dataset)
-Short description of what the variable describes.
+	- `frequencyDomainBodyGyroscopeJerkMagnitudeMeanFrequency`
 
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
-
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
-
-##Sources
+## Sources
 
 1.  <a name="uci-har"/>Human Activity Recognition Using Smartphones Data Set.
     URL: <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>. Accessed 05/21/2014
 2. <a name="har-smart"/>Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz.
    *Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine*.
    International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again)
+
